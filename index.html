@@ -1,0 +1,213 @@
+<?php
+session_start();
+//bring in the function code from an external document:
+include("includes/functionlib.php");	
+
+$ordercol = 'id';
+if(isset($_GET['sortcol'])){
+	$ordercol = $_GET['sortcol'];	
+}
+$where='';
+//if category link was clicked, replace value in $where with the appropriate where clause
+
+//run a query using one of the functions from that include. 
+$results = run_my_query('SELECT * FROM products ORDER BY '.$ordercol); 
+
+
+?><!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">  
+<title>Cinema Toybox</title>
+<link rel="stylesheet" type="text/css" href="css/reset.css">
+<link rel="stylesheet" type="text/css" href="css/responsive-nav.css">
+<link rel="stylesheet" type="text/css" href="css/style1.css">
+<!--[if lt IE 9]>
+	<link rel="stylesheet" type="text/css" href="css/IE8Style1.css">
+<![endif]-->
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"> </script>
+</head>
+
+<body class="clearfix">
+    <header class="clearfix">
+            <div id="topheader">
+                <div class="content">
+                <a href="#">Admin</a>
+                </div>
+            </div>
+           
+            
+            <div id="midbanner" class="clearfix">
+            	<div class="content">
+               	  <div id="logoWrap" class="content">
+                       <img src="img/logo3.png" alt="Cinema Toybox" id="logo"/>
+                  </div>
+               
+            
+            	  <nav id="aboutNav">
+                  	<ul>
+                    	<li><a href="#"><img src="img/homebutton.png" alt="Home" class="social"></a></li>
+                        <li><a href="#"><img src="img/aboutbutton.png" alt="About" class="social"></a></li>
+                        <li><a href="#"><img src="img/contactbutton.png" alt="contact" class="social"></a></li>
+                        <!--<li><a href="#"><img src="img/FACEBOOK.gif" alt="Facebook" class="social"></a></li>
+                    	<li><a href="#"><img src="img/TWITTER.gif" alt="twitter" class="social"></a></li>
+                    	<li><a href="#"><img src="img/PINTEREST.gif" alt="pinterest" class="social"></a></li>-->
+                        <li><a href="#"><img src="img/CART.png" alt="Shopping Cart" class="social"></a></li>
+                    </ul>
+                  </nav>
+                   
+           		</div>
+            </div>
+            
+            
+            
+            <div id="bottomheader" class="clearfix">
+                <div class="content"> 
+                  	<nav id="mainNav" class="nav-collapse">       
+                  		<ul>
+                            <li id="link1"><a href="products.php"><img src="img/HDTVNAV.gif" alt="HDTVs" class="navIcons"/></a></li>
+                            <li><a href="products.php"><img src="img/PROJECTOR.gif" alt="Projectors" class="navIcons"/></a></li>
+                            <li><a href="products.php"><img src="img/SCREEN.gif" alt="Projection Screens" class="navIcons"/></a></li>
+                            <li><a href="products.php"><img src="img/AUDIO.gif" alt="Home Audio" class="navIcons"/></a></li>
+                            <li><a href="products.php"><img src="img/ACCESSORIES.gif" alt="accessories" class="navIcons"/></a></li>
+                            <li><a href="services.php"><img src="img/SERVICES.gif" alt="Our Services" class="navIcons"></a></li>
+                        </ul>
+                    </nav>
+                 </div>
+            </div>
+    </header>   
+<!--END HEADER AND NAVIGATION-->    
+    
+       
+
+
+
+
+
+
+<!--BEGIN SLIDESHOW-->
+    <div id="mainSlideshow">
+    	<div id="Sliderbanner">
+        	<div class="content">
+                    <div class="container content">     
+                    <div id="slider">
+                        <ul class="slides">
+                            <li class="slide"><img src="img/Slider/4k/4kbackground.jpg" alt="Blue Background"></li>
+                            <li class="slide"><img src="img/Slider/HeadphoneSlide/Background.jpg" alt="Blue background"></li>
+                            <li class="slide"><img src="img/Slider/install/installbackground.jpg" alt="Home Theater Background"></li>
+                            <li class="slide"><img src="img/Slider/4k/4kbackground.jpg" alt="Bubble background"></li>
+                        </ul>
+                    </div>
+                </div>
+                
+             <div class="container2 content">
+                    
+                    
+                    <div id="slideOne">
+                        <ul class="slideTwo">
+                            <li class="slideThree"><img src="img/Slider/4k/smallcircle.png" alt="Bubbles"></li>
+                            <li class="slideThree"><img src="img/Slider/HeadphoneSlide/headphoneperson2.png" alt="Headphones"></li>
+                            <li class="slideThree"><img src="img/Slider/install/installlogo.png" alt="Cinema Toybox"></li>
+                            <li class="slideThree"><img src="img/Slider/4k/smallcircle.png" alt="Bubbles"></li>
+                        </ul>
+                   </div>
+                </div>
+            </div>
+            
+            <div class="container3 content">
+                    
+                    
+                    <div id="slideFour">
+                        <ul class="slideFive">
+                            <li class="slideSix"><img src="img/Slider/4k/bigcircle.png" alt="Bubbles"></li>
+                            <li class="slideSix"><img src="img/Slider/HeadphoneSlide/headphoneperson3.png" alt="Headphones"></li>
+                            <li class="slideSix"><img src="img/Slider/install/installprice.png" alt="Free Installation"></li>
+                            <li class="slideSix"><img src="img/Slider/4k/bigcircle.png" alt="Bubbles"></li>
+                        </ul>
+                   </div>
+                </div>
+            </div>
+            
+            <div class="container4 content">
+                    
+                    
+             <div id="slideSeven">
+                        <ul class="slideEight">
+                            <li class="slideNine"><img src="img/Slider/4k/4ktv.png" alt="4K TV"></li>
+                            <li class="slideNine"><img src="img/Slider/HeadphoneSlide/headphoneperson.png" alt="Headphones"></li>
+                            <li class="slideNine"><img src="img/Slider/blank.png" alt="Blank Slider"></li>
+                            <li class="slideNine"><img src="img/Slider/4k/4ktv.png" alt="4K TV"></li>
+                        </ul>
+                   </div>
+                </div>
+            </div>
+         
+       
+<!--END SLIDESHOW-->
+
+
+
+
+
+
+<!--FEATURED PRODUCTS SECTION-->
+
+
+	<div id="featureProducts" class="content clearfix">
+    
+    	<img src="img/featuredprod.gif" alt="Featured Products" class="featureProd">
+        <img src="img/featuredprodbig.png" alt="Featured Products" class="featureProd2">
+        
+        <div class="productsColumns" id="column1">
+        	<img src="img/miatchi4kheader.gif" alt="Miatchi 4K HDTVs" class="thumbHead">
+        	<img src="img/miatchi4k.png" alt="Miatchi 4K TV" class="featureThumbs">
+            
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, </p>
+        </div>
+        
+        <div class="productsColumns">
+        	<img src="img/patsonfeature.gif" alt="Patson Projectors" class="thumbHead">
+        	<img src="img/patsonProjector.png" alt="Patson Electronis Projector" class="featureThumbs">
+            
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, </p>
+        </div>
+    
+    	<div class="productsColumns">
+        	<img src="img/kiawiheader.gif" alt="Kiawi LCD TVs" class="thumbHead">
+        	<img src="img/KiawiLED.png" alt="Kiawi LED TVs" class="featureThumbs">
+            
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, </p>
+        </div>
+    </div>
+
+
+<!--END FEATURED PRODUCTS SECTION-->
+
+
+
+
+
+<!--FOOTER INFORMATION-->
+
+<footer>
+	<h6>&copy; 2014 Matt Tomich</h6>
+    <p>This site is intended for student purposes only.  Thank you for visiting!</p>
+</footer>
+
+
+<!--END FOOTER-->
+
+<script src="js/jquery-1.11.0.js"></script>   
+<script src="js/responsive-nav.js"></script>
+<script src="js/script.js"></script>
+<script>
+
+  var nav = responsiveNav(".nav-collapse");
+
+</script>
+
+<!--JS & JQueary for an animated scroll-->
+
+</body>
+</html>
